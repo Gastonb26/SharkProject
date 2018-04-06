@@ -1,4 +1,4 @@
 sceneSetups:
-- path: Assets/Scenes/MainSandbox.unity
+- path: Assets/Scenes/KevinSandbox.unity
   isLoaded: 1
   isActive: 1
