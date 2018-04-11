@@ -11,6 +11,8 @@ public class PlayerMove : MonoBehaviour
     private Animator PlayerAni;
     private bool Running = false;
     private bool Walking = true;
+    private float Idle = 32;
+    private bool SwapIdle = true;
 
     // Stats
     private int Health = 2;
@@ -19,7 +21,6 @@ public class PlayerMove : MonoBehaviour
     public Transform playercam, character, centerpoint;
     public float MouseSensitivity = 10.0f;
     public float MovementSpeed = 2.0f;
-    //public float CameraZoom = -2.5f;
     public float RotationSpeed = 25;
     public float Gravity = 9.8f;
     public float jumpStrenght = 4;
@@ -57,29 +58,23 @@ public class PlayerMove : MonoBehaviour
         MouseX += Input.GetAxis("Mouse X") * MouseSensitivity;
         MouseY -= Input.GetAxis("Mouse Y") * MouseSensitivity;
 
-        #region Jump
-        //if ((Input.GetButtonDown("Fire3") && Player.GetComponent<cameraswitch>().is_player))
-        //{
-        //    Debug.Log("sprint");
-        //    MovementSpeed = 10;
-        //}
-        //else if (Input.GetButtonUp("Fire3") && Player.GetComponent<cameraswitch>().is_player)
-        //{
-        //    Debug.Log("sprint");
-        //    MovementSpeed = 5;
-        //}
-        #endregion
+        Idle += 0.1f;
+        PlayerAni.SetFloat("Idle", Idle);
 
-        #region Crouch
-        //if (Input.GetKeyDown(KeyCode.LeftControl) && Player.GetComponent<cameraswitch>().is_player)
-        //{
-        //    MovementSpeed = 2.5f;
-        //}
-        //else if (Input.GetKeyUp(KeyCode.LeftControl) && Player.GetComponent<cameraswitch>().is_player)
-        //{
-        //    MovementSpeed = 5;
-        //}
-        #endregion
+        if (Idle > 54 && SwapIdle == true)
+        {
+            PlayerAni.SetBool("IdleSwap", true);
+            SwapIdle = false;
+            Idle = 0;
+        }
+
+        else if (Idle > 54 && SwapIdle == false)
+        {
+            PlayerAni.SetBool("IdleSwap", false);
+            SwapIdle = true;
+            Idle = 0;
+        }
+
 
         MouseY = Mathf.Clamp(MouseY, -35f, 35f);
         //playercam.LookAt(centerpoint);
@@ -114,15 +109,24 @@ public class PlayerMove : MonoBehaviour
             if (Input.GetAxis("Horizontal") == 0 && Input.GetAxis("Vertical") == 0)
             {
                 Running = false;
+                Walking = false;
             }
 
-            else if (Input.GetAxis("Horizontal") != 0 || Input.GetAxis("Vertical") != 0)
+            else if (Input.GetAxis("Vertical") > 0)
             {
                 Running = true;
+                Walking = false;
             }
 
-            Walking = false;
+
+
+            else if (Input.GetAxis("Vertical") < 0 || Input.GetAxis("Horizontal") != 0)
+            {
+                Running = false;
+                Walking = true;
+            }
         }
+        
 
 // Else Walk If Moving
         else
