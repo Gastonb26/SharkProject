@@ -1,4 +1,4 @@
 sceneSetups:
-- path: Assets/Scenes/KevinSandbox.unity
+- path: Assets/SUIMONO - WATER SYSTEM 2/_DEMO/Suimono2_Buoyancy_Demo.unity
   isLoaded: 1
   isActive: 1
