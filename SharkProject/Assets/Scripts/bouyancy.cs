@@ -5,46 +5,45 @@ using UnityEngine;
 public class bouyancy : MonoBehaviour {
 
 
-    public float waterLevel;
-    public float waterDensity;
-    public float upforce;
-    public float floatthreshold;
-    float forceFactor;
-    Vector3 floatForce; 
+    //public float waterLevel;
+    //public float waterDensity;
+    //public float upforce;
+    //public float floatthreshold;
+    //float forceFactor;
+    //Vector3 floatForce;
 
-
-
+ 
 
 
 
     ///////////////////////////Simple Way//////////////////////////////////////////////////////////
 
-    //public float waterLevel = 0.0f;
-    //public float floatThreshold = 2.0f;
-    //public float waterDensity = 0.125f;
-    //public float downforce = 4.0f;
+    public float waterLevel = 0.0f;
+    public float floatThreshold = 2.0f;
+    public float waterDensity = 0.125f;
+    public float downforce = 4.0f;
 
-    //float forcefactor;
-    //Vector3 floatForce; 
+    float forcefactor;
+    Vector3 floatForce;
 
-    //private void FixedUpdate()
-    //{
-    //    forcefactor = 1.0f - ((transform.position.y - waterLevel) / floatThreshold);
+    private void FixedUpdate()
+    {
+        forcefactor = 1.0f - ((transform.position.y - waterLevel) / floatThreshold);
 
-    //    if (forcefactor > 0.0f)
-    //    {
-    //        floatForce = -Physics.gravity * GetComponent<Rigidbody>().mass * (forcefactor - GetComponent<Rigidbody>().velocity.y * waterDensity);
-    //        floatForce += new Vector3(0.0f, -downforce * GetComponent<Rigidbody>().mass, 0.0f);
-    //        GetComponent<Rigidbody>().AddForceAtPosition(floatForce, transform.position); 
+        if (forcefactor > 0.0f)
+        {
+            floatForce = -Physics.gravity * GetComponent<Rigidbody>().mass * (forcefactor - GetComponent<Rigidbody>().velocity.y * waterDensity);
+            floatForce += new Vector3(0.0f, -downforce * GetComponent<Rigidbody>().mass, 0.0f);
+            GetComponent<Rigidbody>().AddForceAtPosition(floatForce, transform.position);
 
-    //    }
-    //}
-
-
+        }
+    }
 
 
 
-    
+
+
+
     ////////////////////////MOST INTENSE WAY/////////////////////////////////////
 
     //public float density = 500;
