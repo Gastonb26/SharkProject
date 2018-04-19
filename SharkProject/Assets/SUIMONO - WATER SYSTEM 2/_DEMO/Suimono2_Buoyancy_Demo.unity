@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0, g: 0, b: 0, a: 1}
+  m_IndirectSpecularColor: {r: 0.33326286, g: 0.43222728, b: 0.43733925, a: 1}
 --- !u!157 &4
 LightmapSettings:
   m_ObjectHideFlags: 0
@@ -113,7 +113,7 @@ NavMeshSettings:
     debug:
       m_Flags: 0
   m_NavMeshData: {fileID: 0}
---- !u!21 &14143979
+--- !u!21 &21890992
 Material:
   serializedVersion: 6
   m_ObjectHideFlags: 0
@@ -121,7 +121,8 @@ Material:
   m_PrefabInternal: {fileID: 0}
   m_Name: mat_water_surface
   m_Shader: {fileID: 4800000, guid: 5af3fd41baf694e4db80b54ea540749f, type: 3}
-  m_ShaderKeywords: 
+  m_ShaderKeywords: SUIMONO_CAUST_ON SUIMONO_DYNREFL_ON SUIMONO_REFL_OFF SUIMONO_TESS_ON
+    SUIMONO_TRANS_ON
   m_LightmapFlags: 5
   m_EnableInstancingVariants: 0
   m_DoubleSidedGI: 0
@@ -212,7 +213,7 @@ Material:
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _ReflectionTex:
-        m_Texture: {fileID: 1292411750}
+        m_Texture: {fileID: 0}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _Surface1:
@@ -238,7 +239,7 @@ Material:
     - _WaveTex:
         m_Texture: {fileID: 2800000, guid: 9e0b039b60bba5c4ea73849d69af386a, type: 3}
         m_Scale: {x: 1, y: 1}
-        m_Offset: {x: -0, y: -0}
+        m_Offset: {x: 0, y: 0}
     - _testTransTex:
         m_Texture: {fileID: 8400000, guid: 4cbb053dd78893346b31535310230dc4, type: 2}
         m_Scale: {x: 1, y: 1}
@@ -382,7 +383,7 @@ Transform:
   - {fileID: 1178633784}
   - {fileID: 456113502}
   m_Father: {fileID: 0}
-  m_RootOrder: 6
+  m_RootOrder: 7
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &71442687
 MonoBehaviour:
@@ -397,7 +398,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   systemTime: 0
-  systemLocalTime: 0
+  systemLocalTime: 123.69614
   flowSpeed: 0.084
   flowDirection: 180
   useBeaufortScale: 1
@@ -444,9 +445,9 @@ MonoBehaviour:
   enableInteraction: 1
   dynamicReflectFlag: 1
   enableReflections: 1
-  enableDynamicReflections: 1
+  enableDynamicReflections: 0
   useEnableReflections: 1
-  useEnableDynamicReflections: 1
+  useEnableDynamicReflections: 0
   useReflections: 1
   useDynReflections: 1
   reflectLayer: 1
@@ -466,9 +467,9 @@ MonoBehaviour:
   useTexNormal1: {fileID: 2800000, guid: 48e29dc2e9488474081bc20a42a364b9, type: 3}
   useTexNormal2: {fileID: 2800000, guid: fdd39131993ce804da86a2e71c17a742, type: 3}
   useTexNormal3: {fileID: 2800000, guid: fb77700eb10ac344db495df815b29823, type: 3}
-  showWaves: 0
+  showWaves: 1
   customWaves: 0
-  localTime: 0
+  localTime: 20.78095
   beaufortVal: 0.7782609
   showShore: 0
   shorelineHeight: 0.397
@@ -476,7 +477,7 @@ MonoBehaviour:
   shorelineScale: 3.55
   shorelineSpeed: 4
   shorelineNorm: 0
-  showSurface: 0
+  showSurface: 1
   overallBright: 1
   overallTransparency: 1
   depthAmt: 0.428
@@ -728,8 +729,8 @@ MonoBehaviour:
     <data_underDarkRange>(50)
 
 '
-  dir: G:/PROJECTS/SUIMONO 2.0/SUIMONO_V2.1.5 (base 5.0)/Assets/SUIMONO - WATER SYSTEM
-    2/RESOURCES/
+  dir: C:/Users/Gaston Blanco/Desktop/SharkProject2/SharkProject/Assets/SUIMONO -
+    WATER SYSTEM 2/RESOURCES/
   baseDir: SUIMONO - WATER SYSTEM 2/RESOURCES/
   presetSaveName: my custom preset
   presetFile: 
@@ -745,8 +746,8 @@ MonoBehaviour:
   skybox: {fileID: 2100000, guid: 554bce0067616814984a97648b13e102, type: 2}
   d: 2
   dn: 2
-  pdir: G:/PROJECTS/SUIMONO 2.0/SUIMONO_V2.1.5 (base 5.0)/Assets/SUIMONO - WATER SYSTEM
-    2/RESOURCES//SUIMONO_PRESETS_Built-In Presets
+  pdir: C:/Users/Gaston Blanco/Desktop/SharkProject2/SharkProject/Assets/SUIMONO -
+    WATER SYSTEM 2/RESOURCES//SUIMONO_PRESETS_Built-In Presets
   f: 26
   px: 13
   nx: 26
@@ -767,6 +768,26 @@ MonoBehaviour:
   - 50
   retData: 
   retVal: 1
+--- !u!1 &100194772 stripped
+GameObject:
+  m_PrefabParentObject: {fileID: 1827417914721336, guid: 8582a4253b92cce4e8d056fd6c420b1f,
+    type: 2}
+  m_PrefabInternal: {fileID: 2083379685}
+--- !u!54 &100194774
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 100194772}
+  serializedVersion: 2
+  m_Mass: 1
+  m_Drag: 0
+  m_AngularDrag: 0.05
+  m_UseGravity: 1
+  m_IsKinematic: 0
+  m_Interpolate: 0
+  m_Constraints: 0
+  m_CollisionDetection: 0
 --- !u!1 &134605287
 GameObject:
   m_ObjectHideFlags: 0
@@ -871,7 +892,7 @@ MeshRenderer:
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
   m_Materials:
-  - {fileID: 14143979}
+  - {fileID: 21890992}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -1032,7 +1053,7 @@ Transform:
   - {fileID: 1636979192}
   - {fileID: 1310858327}
   m_Father: {fileID: 0}
-  m_RootOrder: 2
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!54 &282407371
 Rigidbody:
@@ -1399,15 +1420,15 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &456113502
 Transform:
   m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 440958, guid: be5dd6f307215d24d93e0aa63e392a16, type: 2}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 456113501}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0.74, y: 2.9, z: -10.77}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 10.4, y: 15.103966, z: -33.54882}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 71442686}
@@ -1450,7 +1471,7 @@ MonoBehaviour:
   resolution: 512
   cameraOffset: 0
   reflectionOffset: 0
-  renderTexDiff: {fileID: 1292411750}
+  renderTexDiff: {fileID: 1692250193}
   renderShader: {fileID: 0}
   executeInEditMode: 0
   isUnderwater: 0
@@ -1468,7 +1489,7 @@ Camera:
   m_Enabled: 1
   serializedVersion: 2
   m_ClearFlags: 1
-  m_BackGroundColor: {r: 0.19215687, g: 0.3019608, b: 0.4745098, a: 0.019607844}
+  m_BackGroundColor: {r: 0.19215687, g: 0.3019608, b: 0.4745098, a: 0}
   m_NormalizedViewPortRect:
     serializedVersion: 2
     x: 0
@@ -1476,16 +1497,16 @@ Camera:
     width: 1
     height: 1
   near clip plane: 0.3
-  far clip plane: 10000
-  field of view: 35
+  far clip plane: 1000
+  field of view: 75
   orthographic: 0
   orthographic size: 5
-  m_Depth: -1
+  m_Depth: 0
   m_CullingMask:
     serializedVersion: 2
     m_Bits: 1
-  m_RenderingPath: 3
-  m_TargetTexture: {fileID: 1292411750}
+  m_RenderingPath: -1
+  m_TargetTexture: {fileID: 1692250193}
   m_TargetDisplay: 0
   m_TargetEye: 3
   m_HDR: 0
@@ -1778,7 +1799,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 5
+  m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &670669446
 GameObject:
@@ -1913,8 +1934,8 @@ Transform:
   m_PrefabParentObject: {fileID: 497256, guid: 34802f7393099e04da807606a2803f15, type: 2}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 753717656}
-  m_LocalRotation: {x: 0.042747542, y: 0, z: 0, w: 0.9990859}
-  m_LocalPosition: {x: 0.74, y: 2.9, z: -10.77}
+  m_LocalRotation: {x: 0.16608033, y: -0, z: -0, w: 0.98611224}
+  m_LocalPosition: {x: 10.4, y: 15.103966, z: -33.54882}
   m_LocalScale: {x: 1.0001969, y: 1.1419997, z: 1.1418117}
   m_Children: []
   m_Father: {fileID: 1141402720}
@@ -1966,7 +1987,7 @@ MonoBehaviour:
   resolution: 512
   cameraOffset: 0
   reflectionOffset: 0
-  renderTexDiff: {fileID: 1229977437}
+  renderTexDiff: {fileID: 864302094}
   renderShader: {fileID: 0}
   executeInEditMode: 0
   isUnderwater: 0
@@ -1993,15 +2014,15 @@ Camera:
     height: 1
   near clip plane: 1
   far clip plane: 300
-  field of view: 35
+  field of view: 75
   orthographic: 0
   orthographic size: 100
   m_Depth: 0
   m_CullingMask:
     serializedVersion: 2
     m_Bits: 268433663
-  m_RenderingPath: 3
-  m_TargetTexture: {fileID: 1229977437}
+  m_RenderingPath: -1
+  m_TargetTexture: {fileID: 864302094}
   m_TargetDisplay: 0
   m_TargetEye: 3
   m_HDR: 1
@@ -2034,8 +2055,8 @@ Transform:
   m_PrefabParentObject: {fileID: 466440, guid: 34802f7393099e04da807606a2803f15, type: 2}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 786544672}
-  m_LocalRotation: {x: 0.042747542, y: 0, z: 0, w: 0.9990859}
-  m_LocalPosition: {x: 0.74, y: 2.9, z: -10.77}
+  m_LocalRotation: {x: 0.16608033, y: -0, z: -0, w: 0.98611224}
+  m_LocalPosition: {x: 10.4, y: 15.103966, z: -33.54882}
   m_LocalScale: {x: 1.0001979, y: 1.142, z: 1.141813}
   m_Children: []
   m_Father: {fileID: 1141402720}
@@ -2059,7 +2080,7 @@ MonoBehaviour:
   resolution: 128
   cameraOffset: 0
   reflectionOffset: 0
-  renderTexDiff: {fileID: 1156187041}
+  renderTexDiff: {fileID: 2025385008}
   renderShader: {fileID: 0}
   executeInEditMode: 0
   isUnderwater: 0
@@ -2086,15 +2107,15 @@ Camera:
     height: 1
   near clip plane: 1
   far clip plane: 100
-  field of view: 35
+  field of view: 75
   orthographic: 0
   orthographic size: 100
   m_Depth: 1
   m_CullingMask:
     serializedVersion: 2
     m_Bits: 1024
-  m_RenderingPath: 3
-  m_TargetTexture: {fileID: 1156187041}
+  m_RenderingPath: 1
+  m_TargetTexture: {fileID: 2025385008}
   m_TargetDisplay: 0
   m_TargetEye: 3
   m_HDR: 1
@@ -2104,6 +2125,37 @@ Camera:
   m_OcclusionCulling: 1
   m_StereoConvergence: 10
   m_StereoSeparation: 0.022
+--- !u!84 &818955539
+RenderTexture:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_Name: 
+  m_ImageContentsHash:
+    serializedVersion: 2
+    Hash: 00000000000000000000000000000000
+  m_ForcedFallbackFormat: 4
+  m_DownscaleFallback: 0
+  m_Width: 128
+  m_Height: 128
+  m_AntiAliasing: 1
+  m_DepthFormat: 2
+  m_ColorFormat: 11
+  m_MipMap: 0
+  m_GenerateMips: 0
+  m_SRGB: 0
+  m_UseDynamicScale: 0
+  m_BindMS: 0
+  m_TextureSettings:
+    serializedVersion: 2
+    m_FilterMode: 2
+    m_Aniso: 0
+    m_MipBias: 0
+    m_WrapU: 1
+    m_WrapV: 1
+    m_WrapW: 1
+  m_Dimension: 2
+  m_VolumeDepth: 1
 --- !u!1 &820739495
 GameObject:
   m_ObjectHideFlags: 0
@@ -2172,6 +2224,37 @@ CanvasRenderer:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 820739495}
+--- !u!84 &864302094
+RenderTexture:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_Name: 
+  m_ImageContentsHash:
+    serializedVersion: 2
+    Hash: 00000000000000000000000000000000
+  m_ForcedFallbackFormat: 4
+  m_DownscaleFallback: 0
+  m_Width: 512
+  m_Height: 512
+  m_AntiAliasing: 1
+  m_DepthFormat: 2
+  m_ColorFormat: 11
+  m_MipMap: 0
+  m_GenerateMips: 0
+  m_SRGB: 0
+  m_UseDynamicScale: 0
+  m_BindMS: 0
+  m_TextureSettings:
+    serializedVersion: 2
+    m_FilterMode: 2
+    m_Aniso: 0
+    m_MipBias: 0
+    m_WrapU: 1
+    m_WrapV: 1
+    m_WrapW: 1
+  m_Dimension: 2
+  m_VolumeDepth: 1
 --- !u!1 &892960301
 GameObject:
   m_ObjectHideFlags: 0
@@ -2236,7 +2319,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 1
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &892960304
 MonoBehaviour:
@@ -2398,6 +2481,37 @@ MeshFilter:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 972067684}
   m_Mesh: {fileID: 10207, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!84 &1051239109
+RenderTexture:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_Name: 
+  m_ImageContentsHash:
+    serializedVersion: 2
+    Hash: 00000000000000000000000000000000
+  m_ForcedFallbackFormat: 4
+  m_DownscaleFallback: 0
+  m_Width: 512
+  m_Height: 512
+  m_AntiAliasing: 1
+  m_DepthFormat: 2
+  m_ColorFormat: 11
+  m_MipMap: 0
+  m_GenerateMips: 0
+  m_SRGB: 0
+  m_UseDynamicScale: 0
+  m_BindMS: 0
+  m_TextureSettings:
+    serializedVersion: 2
+    m_FilterMode: 2
+    m_Aniso: 0
+    m_MipBias: 0
+    m_WrapU: 1
+    m_WrapV: 1
+    m_WrapW: 1
+  m_Dimension: 2
+  m_VolumeDepth: 1
 --- !u!1 &1099697925
 GameObject:
   m_ObjectHideFlags: 0
@@ -2504,7 +2618,7 @@ Transform:
   - {fileID: 1160829285}
   - {fileID: 1967574832}
   m_Father: {fileID: 0}
-  m_RootOrder: 7
+  m_RootOrder: 8
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &1141402721
 MonoBehaviour:
@@ -2530,8 +2644,26 @@ MonoBehaviour:
   - {fileID: 400000, guid: 4dedaf8c4fa157545ad71a8f07395bef, type: 2}
   - {fileID: 400000, guid: 8466e1a003a019c448f034752011cb6d, type: 2}
   systemClampType: 0
-  fxObjects: []
-  fxParticles: []
+  fxObjects:
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  fxParticles:
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
   clampIndex: 0000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000
   clampOptions:
   - No Clamp
@@ -2591,7 +2723,7 @@ MonoBehaviour:
   causticHandlerObjectTrans: {fileID: 753717658}
   causticToolsObject: {fileID: 2048841008}
   causticCamObject: {fileID: 2048841009}
-  causticHandlerObject: {fileID: 2048841006}
+  causticHandlerObject: {fileID: 0}
   wakeObject: {fileID: 786544672}
   wakeCamObject: {fileID: 786544675}
   normalsObject: {fileID: 1664010151}
@@ -2640,7 +2772,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   suimonoVersionNumber: 2.1.5
-  systemTime: 0
+  systemTime: 123.84822
   autoSetLayers: 1
   layerWater: Suimono_Water
   layerWaterNum: 8
@@ -2650,11 +2782,11 @@ MonoBehaviour:
   layerScreenFXNum: 10
   layersAreSet: 1
   autoSetCameraFX: 1
-  manualCamera: {fileID: 0}
-  mainCamera: {fileID: 1692532613}
-  cameraTypeIndex: 0
-  setCamera: {fileID: 1692532613}
-  setTrack: {fileID: 1692532613}
+  manualCamera: {fileID: 2067484830}
+  mainCamera: {fileID: 2067484830}
+  cameraTypeIndex: 1
+  setCamera: {fileID: 2067484830}
+  setTrack: {fileID: 2067484830}
   setLight: {fileID: 0}
   enableUnderwaterFX: 1
   enableInteraction: 1
@@ -2691,92 +2823,73 @@ MonoBehaviour:
   playSoundBelow: 1
   playSoundAbove: 1
   maxVolume: 1
-  maxSounds: 10
+  maxSounds: 20
   defaultSplashSound: []
   currentObjectIsOver: 0
-  currentObjectDepth: 0
-  currentTransitionDepth: 0
-  currentSurfaceLevel: 0
+  currentObjectDepth: -16.103966
+  currentTransitionDepth: -16.103966
+  currentSurfaceLevel: -1
   underwaterThreshold: 0.1
-  suimonoObject: {fileID: 0}
+  suimonoObject: {fileID: 71442687}
   suimonoModuleLibrary: {fileID: 1141402722}
-  setCameraComponent: {fileID: 1692532612}
+  setCameraComponent: {fileID: 2067484834}
   useTenkoku: 0
   tenkokuWindDir: 0
   tenkokuWindAmt: 0
   tenkokuUseWind: 1
   showTenkoku: 1
   tenkokuUseReflect: 1
-  heightValues: []
+  heightValues:
+  - -1
+  - -1
+  - -1
+  - -16.103966
+  - 0
+  - 0
+  - 180
+  - 0.084
+  - -0.43997246
+  - -16.103966
+  - 1
+  - 1
   isForward: 0
-  isAdvDist: 0
+  isAdvDist: 1
   waveScale: 1
   flowSpeed: 0.02
   offset: 0
   heightTex: {fileID: 2800000, guid: 48e29dc2e9488474081bc20a42a364b9, type: 3}
   heightTexT: {fileID: 2800000, guid: fdd39131993ce804da86a2e71c17a742, type: 3}
   heightTexR: {fileID: 2800000, guid: fb77700eb10ac344db495df815b29823, type: 3}
-  heightObject: {fileID: 0}
-  relativePos: {x: 0, y: 0}
-  texCoord: {x: 0, y: 0, z: 0}
-  texCoord1: {x: 0, y: 0, z: 0}
-  texCoordT: {x: 0, y: 0, z: 0}
-  texCoordT1: {x: 0, y: 0, z: 0}
-  texCoordR: {x: 0, y: 0, z: 0}
-  texCoordR1: {x: 0, y: 0, z: 0}
-  heightVal0: {r: 0, g: 0, b: 0, a: 0}
-  heightVal1: {r: 0, g: 0, b: 0, a: 0}
-  heightValT0: {r: 0, g: 0, b: 0, a: 0}
-  heightValT1: {r: 0, g: 0, b: 0, a: 0}
-  heightValR0: {r: 0, g: 0, b: 0, a: 0}
-  heightValR1: {r: 0, g: 0, b: 0, a: 0}
+  heightObject: {fileID: 223990429}
+  relativePos: {x: 0.4815, y: 0.76925004}
+  texCoord: {x: 246.52812, y: 0, z: -1084.071}
+  texCoord1: {x: 184.89597, y: 0, z: 664.8738}
+  texCoordT: {x: 246.52812, y: 0, z: -1084.071}
+  texCoordT1: {x: 123.26397, y: 0, z: 566.4098}
+  texCoordR: {x: 7.704008, y: 0, z: -80.06244}
+  texCoordR1: {x: 7.704016, y: 0, z: -172.43288}
+  heightVal0: {r: 0.26666668, g: 0.6039216, b: 1, a: 0.12235295}
+  heightVal1: {r: 0.5254902, g: 0.31764707, b: 1, a: 0.07829412}
+  heightValT0: {r: 0.47843137, g: 0.16862746, b: 0.8666667, a: 0.07829412}
+  heightValT1: {r: 0.5019608, g: 0.5411765, b: 0.99607843, a: 0}
+  heightValR0: {r: 0.42352942, g: 0.6862745, b: 0.9843137, a: 0.25452942}
+  heightValR1: {r: 0.5803922, g: 0.5137255, b: 1, a: 0}
   localTime: 0
-  row: 0
-  pixIndex: 0
-  pixCol: {r: 0, g: 0, b: 0, a: 0}
+  row: 173
+  pixIndex: 21255
+  pixCol: {r: 0.5803922, g: 0.5137255, b: 1, a: 0}
   t: 32
   y: 32
   dir: {x: 0, y: 0, z: 0}
   pivotPoint: {x: 0, y: 0, z: 0}
-  useLocalTime: 0
-  flow_dirC: {x: 0, y: 0}
-  flowSpeed0: {x: 0, y: 0}
-  flowSpeed1: {x: 0, y: 0}
-  flowSpeed2: {x: 0, y: 0}
-  flowSpeed3: {x: 0, y: 0}
-  tScale: 0
+  useLocalTime: 5.7731524
+  flow_dirC: {x: 0.00000008742278, y: -1}
+  flowSpeed0: {x: 0.000000504705, y: -5.7731524}
+  flowSpeed1: {x: 0.00000012617625, y: -1.4432881}
+  flowSpeed2: {x: 0.00000003154406, y: -0.36082202}
+  flowSpeed3: {x: 0.00000006308812, y: -0.72164404}
+  tScale: 2
   oPos: {x: 0, y: 0}
---- !u!84 &1156187041
-RenderTexture:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_Name: 
-  m_ImageContentsHash:
-    serializedVersion: 2
-    Hash: 00000000000000000000000000000000
-  m_ForcedFallbackFormat: 4
-  m_DownscaleFallback: 0
-  m_Width: 128
-  m_Height: 128
-  m_AntiAliasing: 1
-  m_DepthFormat: 2
-  m_ColorFormat: 11
-  m_MipMap: 0
-  m_GenerateMips: 0
-  m_SRGB: 0
-  m_UseDynamicScale: 0
-  m_BindMS: 0
-  m_TextureSettings:
-    serializedVersion: 2
-    m_FilterMode: 2
-    m_Aniso: 0
-    m_MipBias: 0
-    m_WrapU: 1
-    m_WrapV: 1
-    m_WrapW: 1
-  m_Dimension: 2
-  m_VolumeDepth: 1
 --- !u!1 &1160829284
 GameObject:
   m_ObjectHideFlags: 0
@@ -2800,8 +2913,8 @@ Transform:
   m_PrefabParentObject: {fileID: 408546, guid: 34802f7393099e04da807606a2803f15, type: 2}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1160829284}
-  m_LocalRotation: {x: 0.042747542, y: 0, z: 0, w: 0.9990859}
-  m_LocalPosition: {x: 0.74, y: 2.9, z: -10.77}
+  m_LocalRotation: {x: 0.16608033, y: -0, z: -0, w: 0.98611224}
+  m_LocalPosition: {x: 10.4, y: 15.103966, z: -33.54882}
   m_LocalScale: {x: 1.0001979, y: 1.142, z: 1.141813}
   m_Children: []
   m_Father: {fileID: 1141402720}
@@ -2825,7 +2938,7 @@ MonoBehaviour:
   resolution: 512
   cameraOffset: 0
   reflectionOffset: 0
-  renderTexDiff: {fileID: 1999187734}
+  renderTexDiff: {fileID: 1051239109}
   renderShader: {fileID: 0}
   executeInEditMode: 0
   isUnderwater: 0
@@ -2852,15 +2965,15 @@ Camera:
     height: 1
   near clip plane: 1
   far clip plane: 1000
-  field of view: 35
+  field of view: 75
   orthographic: 0
   orthographic size: 100
   m_Depth: 1
   m_CullingMask:
     serializedVersion: 2
     m_Bits: 512
-  m_RenderingPath: 3
-  m_TargetTexture: {fileID: 1999187734}
+  m_RenderingPath: 1
+  m_TargetTexture: {fileID: 1051239109}
   m_TargetDisplay: 0
   m_TargetEye: 3
   m_HDR: 1
@@ -3207,68 +3320,6 @@ Transform:
   m_Father: {fileID: 1141402720}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!84 &1229977437
-RenderTexture:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_Name: 
-  m_ImageContentsHash:
-    serializedVersion: 2
-    Hash: 00000000000000000000000000000000
-  m_ForcedFallbackFormat: 4
-  m_DownscaleFallback: 0
-  m_Width: 512
-  m_Height: 512
-  m_AntiAliasing: 1
-  m_DepthFormat: 2
-  m_ColorFormat: 11
-  m_MipMap: 0
-  m_GenerateMips: 0
-  m_SRGB: 0
-  m_UseDynamicScale: 0
-  m_BindMS: 0
-  m_TextureSettings:
-    serializedVersion: 2
-    m_FilterMode: 2
-    m_Aniso: 0
-    m_MipBias: 0
-    m_WrapU: 1
-    m_WrapV: 1
-    m_WrapW: 1
-  m_Dimension: 2
-  m_VolumeDepth: 1
---- !u!84 &1292411750
-RenderTexture:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_Name: 
-  m_ImageContentsHash:
-    serializedVersion: 2
-    Hash: 00000000000000000000000000000000
-  m_ForcedFallbackFormat: 4
-  m_DownscaleFallback: 0
-  m_Width: 512
-  m_Height: 512
-  m_AntiAliasing: 1
-  m_DepthFormat: 2
-  m_ColorFormat: 11
-  m_MipMap: 0
-  m_GenerateMips: 0
-  m_SRGB: 0
-  m_UseDynamicScale: 0
-  m_BindMS: 0
-  m_TextureSettings:
-    serializedVersion: 2
-    m_FilterMode: 2
-    m_Aniso: 0
-    m_MipBias: 0
-    m_WrapU: 1
-    m_WrapV: 1
-    m_WrapW: 1
-  m_Dimension: 2
-  m_VolumeDepth: 1
 --- !u!1 &1310858326
 GameObject:
   m_ObjectHideFlags: 0
@@ -3327,6 +3378,37 @@ MeshFilter:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1310858326}
   m_Mesh: {fileID: 10207, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!84 &1327282818
+RenderTexture:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_Name: 
+  m_ImageContentsHash:
+    serializedVersion: 2
+    Hash: 00000000000000000000000000000000
+  m_ForcedFallbackFormat: 4
+  m_DownscaleFallback: 0
+  m_Width: 512
+  m_Height: 512
+  m_AntiAliasing: 1
+  m_DepthFormat: 2
+  m_ColorFormat: 11
+  m_MipMap: 0
+  m_GenerateMips: 0
+  m_SRGB: 0
+  m_UseDynamicScale: 0
+  m_BindMS: 0
+  m_TextureSettings:
+    serializedVersion: 2
+    m_FilterMode: 2
+    m_Aniso: 0
+    m_MipBias: 0
+    m_WrapU: 1
+    m_WrapV: 1
+    m_WrapW: 1
+  m_Dimension: 2
+  m_VolumeDepth: 1
 --- !u!1 &1375248329
 GameObject:
   m_ObjectHideFlags: 0
@@ -3504,7 +3586,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &1649536477
 Transform:
   m_ObjectHideFlags: 0
@@ -3607,8 +3689,8 @@ Transform:
   m_PrefabParentObject: {fileID: 402498, guid: 34802f7393099e04da807606a2803f15, type: 2}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1664010151}
-  m_LocalRotation: {x: 0.042747542, y: 0, z: 0, w: 0.9990859}
-  m_LocalPosition: {x: 0.74, y: 2.9, z: -10.77}
+  m_LocalRotation: {x: 0.16608033, y: -0, z: -0, w: 0.98611224}
+  m_LocalPosition: {x: 10.4, y: 15.103966, z: -33.54882}
   m_LocalScale: {x: 1.0001984, y: 1.1420001, z: 1.1418136}
   m_Children: []
   m_Father: {fileID: 1141402720}
@@ -3632,7 +3714,7 @@ MonoBehaviour:
   resolution: 128
   cameraOffset: 0
   reflectionOffset: 0
-  renderTexDiff: {fileID: 1808880202}
+  renderTexDiff: {fileID: 818955539}
   renderShader: {fileID: 0}
   executeInEditMode: 0
   isUnderwater: 0
@@ -3659,15 +3741,15 @@ Camera:
     height: 1
   near clip plane: 1
   far clip plane: 100
-  field of view: 35
+  field of view: 75
   orthographic: 0
   orthographic size: 100
   m_Depth: 1
   m_CullingMask:
     serializedVersion: 2
     m_Bits: 1024
-  m_RenderingPath: 3
-  m_TargetTexture: {fileID: 1808880202}
+  m_RenderingPath: 1
+  m_TargetTexture: {fileID: 818955539}
   m_TargetDisplay: 0
   m_TargetEye: 3
   m_HDR: 0
@@ -3677,6 +3759,37 @@ Camera:
   m_OcclusionCulling: 1
   m_StereoConvergence: 10
   m_StereoSeparation: 0.022
+--- !u!84 &1692250193
+RenderTexture:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_Name: 
+  m_ImageContentsHash:
+    serializedVersion: 2
+    Hash: 00000000000000000000000000000000
+  m_ForcedFallbackFormat: 4
+  m_DownscaleFallback: 0
+  m_Width: 512
+  m_Height: 512
+  m_AntiAliasing: 1
+  m_DepthFormat: 2
+  m_ColorFormat: 11
+  m_MipMap: 0
+  m_GenerateMips: 0
+  m_SRGB: 0
+  m_UseDynamicScale: 0
+  m_BindMS: 0
+  m_TextureSettings:
+    serializedVersion: 2
+    m_FilterMode: 2
+    m_Aniso: 0
+    m_MipBias: 0
+    m_WrapU: 1
+    m_WrapV: 1
+    m_WrapW: 1
+  m_Dimension: 2
+  m_VolumeDepth: 1
 --- !u!1 &1692532608
 GameObject:
   m_ObjectHideFlags: 0
@@ -3696,7 +3809,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!81 &1692532609
 AudioListener:
   m_ObjectHideFlags: 0
@@ -3765,7 +3878,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 3
+  m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &1692532614
 MonoBehaviour:
@@ -3874,37 +3987,6 @@ CanvasRenderer:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1770249792}
---- !u!84 &1808880202
-RenderTexture:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_Name: 
-  m_ImageContentsHash:
-    serializedVersion: 2
-    Hash: 00000000000000000000000000000000
-  m_ForcedFallbackFormat: 4
-  m_DownscaleFallback: 0
-  m_Width: 128
-  m_Height: 128
-  m_AntiAliasing: 1
-  m_DepthFormat: 2
-  m_ColorFormat: 11
-  m_MipMap: 0
-  m_GenerateMips: 0
-  m_SRGB: 0
-  m_UseDynamicScale: 0
-  m_BindMS: 0
-  m_TextureSettings:
-    serializedVersion: 2
-    m_FilterMode: 2
-    m_Aniso: 0
-    m_MipBias: 0
-    m_WrapU: 1
-    m_WrapV: 1
-    m_WrapW: 1
-  m_Dimension: 2
-  m_VolumeDepth: 1
 --- !u!1 &1864852293
 GameObject:
   m_ObjectHideFlags: 0
@@ -7479,7 +7561,7 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
---- !u!84 &1999187734
+--- !u!84 &2025385008
 RenderTexture:
   m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 0}
@@ -7490,8 +7572,8 @@ RenderTexture:
     Hash: 00000000000000000000000000000000
   m_ForcedFallbackFormat: 4
   m_DownscaleFallback: 0
-  m_Width: 512
-  m_Height: 512
+  m_Width: 128
+  m_Height: 128
   m_AntiAliasing: 1
   m_DepthFormat: 2
   m_ColorFormat: 11
@@ -7551,7 +7633,7 @@ RectTransform:
   - {fileID: 670669447}
   - {fileID: 492403564}
   m_Father: {fileID: 0}
-  m_RootOrder: 4
+  m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
@@ -7665,8 +7747,8 @@ Transform:
   m_PrefabParentObject: {fileID: 447674, guid: 34802f7393099e04da807606a2803f15, type: 2}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 2048841004}
-  m_LocalRotation: {x: 0.042747542, y: 0, z: 0, w: 0.9990859}
-  m_LocalPosition: {x: 0.74, y: 2.9, z: -10.77}
+  m_LocalRotation: {x: 0.16608033, y: -0, z: -0, w: 0.98611224}
+  m_LocalPosition: {x: 10.4, y: 15.103966, z: -33.54882}
   m_LocalScale: {x: 1.0001974, y: 1.1419998, z: 1.1418124}
   m_Children: []
   m_Father: {fileID: 1141402720}
@@ -7718,7 +7800,7 @@ MonoBehaviour:
   resolution: 512
   cameraOffset: 0
   reflectionOffset: 0
-  renderTexDiff: {fileID: 2134024454}
+  renderTexDiff: {fileID: 1327282818}
   renderShader: {fileID: 0}
   executeInEditMode: 0
   isUnderwater: 0
@@ -7745,15 +7827,15 @@ Camera:
     height: 1
   near clip plane: 1
   far clip plane: 300
-  field of view: 35
+  field of view: 75
   orthographic: 0
   orthographic size: 100
   m_Depth: 1
   m_CullingMask:
     serializedVersion: 2
     m_Bits: 268433663
-  m_RenderingPath: 3
-  m_TargetTexture: {fileID: 2134024454}
+  m_RenderingPath: 1
+  m_TargetTexture: {fileID: 1327282818}
   m_TargetDisplay: 0
   m_TargetEye: 3
   m_HDR: 1
@@ -7763,34 +7845,99 @@ Camera:
   m_OcclusionCulling: 1
   m_StereoConvergence: 10
   m_StereoSeparation: 0.022
---- !u!84 &2134024454
-RenderTexture:
+--- !u!1 &2067484829 stripped
+GameObject:
+  m_PrefabParentObject: {fileID: 1274046525786672, guid: 8582a4253b92cce4e8d056fd6c420b1f,
+    type: 2}
+  m_PrefabInternal: {fileID: 2083379685}
+--- !u!4 &2067484830 stripped
+Transform:
+  m_PrefabParentObject: {fileID: 4221922092228564, guid: 8582a4253b92cce4e8d056fd6c420b1f,
+    type: 2}
+  m_PrefabInternal: {fileID: 2083379685}
+--- !u!114 &2067484831
+MonoBehaviour:
   m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 2067484829}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ab00a14ace35229489189437f4636a17, type: 3}
   m_Name: 
-  m_ImageContentsHash:
-    serializedVersion: 2
-    Hash: 00000000000000000000000000000000
-  m_ForcedFallbackFormat: 4
-  m_DownscaleFallback: 0
-  m_Width: 512
-  m_Height: 512
-  m_AntiAliasing: 1
-  m_DepthFormat: 2
-  m_ColorFormat: 11
-  m_MipMap: 0
-  m_GenerateMips: 0
-  m_SRGB: 0
-  m_UseDynamicScale: 0
-  m_BindMS: 0
-  m_TextureSettings:
-    serializedVersion: 2
-    m_FilterMode: 2
-    m_Aniso: 0
-    m_MipBias: 0
-    m_WrapU: 1
-    m_WrapV: 1
-    m_WrapW: 1
-  m_Dimension: 2
-  m_VolumeDepth: 1
+  m_EditorClassIdentifier: 
+  showScreenMask: 0
+  doTransition: 0
+  cancelTransition: 0
+  useUnderSurfaceView: 0
+  distanceFog: 1
+  useRadialDistance: 1
+  heightFog: 0
+  height: 1
+  heightDensity: 2
+  startDistance: 0
+  fogStart: 0
+  fogEnd: 20
+  refractAmt: 0.005
+  refractSpd: 1.5
+  refractScale: 0.5
+  lightFactor: 1
+  underwaterColor: {r: 0, g: 0, b: 0, a: 0}
+  dropsTime: 2
+  wipeTime: 1
+  iterations: 2
+  blurSpread: 1
+  darkRange: 40
+  heightDepth: 1
+  hFac: 0
+  distortTex: {fileID: 0}
+  mask2Tex: {fileID: 0}
+  fogShader: {fileID: 0}
+  fogMaterial: {fileID: 0}
+--- !u!20 &2067484834 stripped
+Camera:
+  m_PrefabParentObject: {fileID: 20947172141009184, guid: 8582a4253b92cce4e8d056fd6c420b1f,
+    type: 2}
+  m_PrefabInternal: {fileID: 2083379685}
+--- !u!1001 &2083379685
+Prefab:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 4035917566209430, guid: 8582a4253b92cce4e8d056fd6c420b1f, type: 2}
+      propertyPath: m_LocalPosition.x
+      value: 12
+      objectReference: {fileID: 0}
+    - target: {fileID: 4035917566209430, guid: 8582a4253b92cce4e8d056fd6c420b1f, type: 2}
+      propertyPath: m_LocalPosition.y
+      value: -20.8
+      objectReference: {fileID: 0}
+    - target: {fileID: 4035917566209430, guid: 8582a4253b92cce4e8d056fd6c420b1f, type: 2}
+      propertyPath: m_LocalPosition.z
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 4035917566209430, guid: 8582a4253b92cce4e8d056fd6c420b1f, type: 2}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4035917566209430, guid: 8582a4253b92cce4e8d056fd6c420b1f, type: 2}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4035917566209430, guid: 8582a4253b92cce4e8d056fd6c420b1f, type: 2}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4035917566209430, guid: 8582a4253b92cce4e8d056fd6c420b1f, type: 2}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4035917566209430, guid: 8582a4253b92cce4e8d056fd6c420b1f, type: 2}
+      propertyPath: m_RootOrder
+      value: 1
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_ParentPrefab: {fileID: 100100000, guid: 8582a4253b92cce4e8d056fd6c420b1f, type: 2}
+  m_IsPrefabParent: 0
